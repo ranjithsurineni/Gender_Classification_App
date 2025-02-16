@@ -115,3 +115,9 @@ This project is inspired by various open-source gender classification applicatio
 ## License
 This project is licensed under the MIT License.
 
+## OutPut
+![Screenshot (21)](https://github.com/user-attachments/assets/090c78b0-b607-4c7a-931a-cbd661249834)
+![Screenshot (22)](https://github.com/user-attachments/assets/92e7c05b-e5ee-4e0f-8b9c-bca6377a50f3)
+![Screenshot (23)](https://github.com/user-attachments/assets/04b73b64-b57c-475a-9c6d-1732cfd358e7)
+![Screenshot (24)](https://github.com/user-attachments/assets/dfc18e78-87c5-470a-9ebd-9310e8c1bc58)
+
