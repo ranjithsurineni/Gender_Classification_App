@@ -57,7 +57,7 @@ cv2.destroyAllWindows()
 ## Running the Web Application
 1. **Start the Flask App**:
    ```bash
-   python app.py
+   python main.py
    ```
 2. **Access the Web Interface**:
    Open a browser and navigate to `http://127.0.0.1:5000/`.
@@ -91,12 +91,26 @@ The function returns:
 │   ├── model_svm.pickle
 │   ├── pca_dict.pickle
 ├── static/
-│   └── css/
+│   ├── icones/
+│   │   └── icones.png ...
+│   ├── images/
+│   │   └── imases.jpg ...
+│   ├── predicts/
+│   ├── uploads/
+│   
 ├── templates/
-│   ├── index.html
-│   └── result.html
-├── app.py
-├── face_recognition.py
+│   ├── app.html
+│   ├── base.html
+│   ├── contact.html
+│   ├── gender.html
+│   └── index.html
+│
+├── app/
+│   ├── face_recognition.py
+│   └── views.py
+│
+├── Aptfile
+├── main.py
 ├── requirements.txt
 └── README.md
 ```
