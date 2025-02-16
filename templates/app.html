@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block bodyblock %}
+<div class="container">
+    <br><br>
+    <h3 class="display-8"> Face Recognition Application </h3>
+    <br>
+    <p>
+        This is a web application that uses the face_recognition library to recognize faces in images. 
+        The application is built using Flask, a web framework for Python. The application allows users 
+        to upload an image and then uses the face_recognition library to recognize faces in the image. 
+        The application then displays the image with boxes around the recognized faces.        
+    </p>
+    <br>
+    <img src="/static/images/01.png" class="image-fluid" alt="Face Recognition" width="85%">
+    <a class="btn btn-outline-primary" href="/app/gender/"> Gender App</a>
+    
+    <h2>Face Recognition Pipeline</h2>
+
+<p>The Face Recognition Pipeline leverages <strong>Haar Cascade, Principal Component Analysis (PCA), and Support Vector Machine (SVM)</strong> to detect and classify faces in an image.</p>
+
+<h3>Pipeline Steps:</h3>
+
+<ol>
+    <li><strong>Load Pre-trained Models:</strong>  
+        <ul>
+            <li>Haar Cascade Classifier for face detection.</li>
+            <li>Pre-trained SVM model for classification.</li>
+            <li>PCA model for dimensionality reduction and mean face extraction.</li>
+        </ul>
+    </li>
+
+    <li><strong>Face Recognition Process:</strong>  
+        <ol>
+            <li><strong>Read Image:</strong> The image is either loaded from a file path or directly passed as an image object.</li>
+            <li><strong>Convert to Grayscale:</strong> The image is converted to grayscale to enhance face detection accuracy.</li>
+            <li><strong>Face Detection:</strong> The Haar Cascade classifier detects faces in the grayscale image.</li>
+            <li><strong>Extract & Normalize Face:</strong> The detected face is cropped, normalized (scaled between 0 and 1), and resized to 100x100 pixels.</li>
+            <li><strong>Flatten Image:</strong> The resized face is reshaped into a 1x10000 feature vector.</li>
+            <li><strong>Subtract Mean Face:</strong> The face image is adjusted by subtracting the mean face (from PCA models) to normalize variations.</li>
+            <li><strong>Apply PCA Transformation:</strong> The PCA model transforms the input face into an eigenface representation.</li>
+            <li><strong>Reconstruct Eigen Image:</strong> The transformed image is inverted to visualize the eigenface.</li>
+            <li><strong>Classification using SVM:</strong> The eigenface representation is passed to the SVM model for classification.</li>
+            <li><strong>Prediction Output:</strong> The model predicts the identity or gender along with a probability score.</li>
+            <li><strong>Draw Bounding Boxes:</strong> The detected face is highlighted with a colored bounding box and labeled with classification results.</li>
+        </ol>
+    </li>
+</ol>
+
+<h3>Key Features:</h3>
+<ul>
+    <li>Efficient and accurate face detection using Haar Cascade.</li>
+    <li>Dimensionality reduction with PCA for optimized classification.</li>
+    <li>Robust classification with a pre-trained SVM model.</li>
+    <li>Visualization of eigenfaces for interpretability.</li>
+</ul>
+
+<h3>Potential Enhancements:</h3>
+<ul>
+    <li>Improve face detection in low-light conditions using Histogram Equalization.</li>
+    <li>Optimize face detection parameters for better accuracy.</li>
+    <li>Implement error handling for cases where no faces are detected.</li>
+</ul>
+
+<p>This pipeline provides an effective solution for real-time face recognition, leveraging machine learning and deep learning techniques.</p>
+
+
+</div>
+<footer class="text-center mt-4 p-3" style="background-color: #f8f9fa; border-top: 1px solid #ddd; position: relative; width: 100%; bottom: 0;">
+    <p>&copy; 2025 Ranjith Kumar Surineni | All Rights Reserved | </p>
+    <p>Disclaimer: This website is for portfolio purposes only. The information provided is based on personal projects and experiences.</p>
+    <p>
+        <a href="https://github.com/ranjithkumar" target="_blank">
+            <img src="/static/icons/github.png" alt="GitHub" width="30" height="30">
+        </a> |
+        <a href="https://www.linkedin.com/in/ranjith-kumar-surineni-b73b981b6" target="_blank"> 
+            <img src="/static/icons/linkedin.png" alt="LinkedIn" width="30" height="30">
+        </a> |
+        <a href="https://www.upwork.com" target="_blank">
+            <img src="/static/icons/upwork.png" alt="Upwork" width="30" height="30">
+        </a> |
+        <a href="https://leetcode.com/u/ranjith_001/" target="_blank">
+            <img src="/static/icons/leetcode.png" alt="LeetCode" width="30" height="30">
+        </a>
+    </p>
+</footer>
+
+{% endblock %} 
