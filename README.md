@@ -89,7 +89,8 @@ The function returns:
 ├── models/
 │   ├── haarcascade_frontalface_default.xml
 │   ├── model_svm.pickle
-│   ├── pca_dict.pickle
+│   └── pca_dict.pickle
+│
 ├── static/
 │   ├── icones/
 │   │   └── icones.png ...
